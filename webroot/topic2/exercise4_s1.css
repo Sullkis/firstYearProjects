@@ -1,3 +1,4 @@
+/*This styles any html code within the body section of the file*/
 body{  
     margin:auto;
     width: 80%;
@@ -5,6 +6,12 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 130%;
 }
+/*This part affects any code in the sub tags used for subscripting*/
+sub{
+    font-size: 80%;
+    font-style: italic;
+}
+/*This affects any code within the header*/
 header{
 
     background-color: #ffd900;
@@ -19,6 +26,7 @@ header h2{
     font-weight: 600;
     font-size: 120%;
 }
+/*This affects any code within the nav tags*/
 nav{
     padding:1%;
     background-color: #ffea70;
@@ -28,36 +36,32 @@ nav li{
     margin: 0 1.5%;
     display: inline-block;
 }
+/*This affect any ancor tags using pseudo code*/
 a{
     color: #5e5e5e;
 }
 a:hover{
     color: orange;
 }
+/*This section affects any code within the main tags*/
 main{
     background-color: white;
     margin-top: 2%;
     margin-bottom: 2%;
     padding-bottom: 1%;
 }
-
-footer{
-    background-color: #ffea70;
-    padding: 1%;
-}
-sub{
-    font-size: 80%;
-    font-style: italic;
-}
+/*This affects the borders around images*/
 img{
     border-color: black;
     border-width: 1px;
     border-style: solid;
 }
+/*This affects figcaptions font style and colour*/
 figcaption{
     color: grey;
     font-style: oblique;
 }
+/*This affects any code within the section tags*/
 section{
     margin:1%;
     padding:2% 0;
@@ -73,10 +77,15 @@ section h1{
 section p{
     margin:1%;
 }
+/*This is for the final section tag as it requires an additional border*/
 section.last{
 
     border-bottom: solid;
     border-width:thin;    
     border-color: grey;
 }
-
+/*This affects any code within the footer tag*/
+footer{
+    background-color: #ffea70;
+    padding: 1%;
+}
