@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+  }
+  form{
+      width: 50%;
+      margin: auto;
+  }
+  legend{
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      background-color: green;
+      color: white;
+      font-weight: 700;
+      padding-top: .25em;
+      padding-bottom: .25em;
+  }
+  fieldset{
+    border-style: solid;
+    border-width: 1pt;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color:#e5ffd8;
+    border-color: green;
+  }
+  .mainfield{
+      border-color: black;
+  }
+  .submitfield{
+      background-color: white;
+      border-width: 0;
+  }
+  select{
+      background-color: white;
+      margin-bottom: 1px;
+      border: 1pt solid lightgrey;
+  }
+  button{
+      margin: .1em;
+      border-radius: 5px ;
+      background-color: green;
+      color: white;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-right: 1em;
+      padding-left: 1em;
+      font-size: 80%;
+  }
+  .submitbuttons{
+      margin-top:1em;
+      text-align: center;
+  }
+  input{
+      background-color: white;
+      margin-bottom: 1px;
+      border: 1pt solid lightgrey;
+  }
+  input[name=date]{
+      width: 10.5em;
+  }
+  input[name=color]{
+    background-color: white;
+    padding: .05% .1%;
+}
+input[name=quantity]{
+    width: 3em;
+}
+input[type=radio]{
+    margin-right: 2px;
+}
