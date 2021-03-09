@@ -1,0 +1,187 @@
+body{
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 100%;
+}
+header.top-bar{
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    background-color: lightgreen;
+    padding-top: .7em;
+    padding-bottom: .4em;
+    margin-bottom: 1em;
+}
+.myTitle {
+    font-size: 130%;
+    font-weight: 700;
+    color: #000;
+    
+}
+.title{
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 1em;
+    padding-bottom: 1em;
+    margin-left: 1em;
+    
+}
+nav.navigation{
+    position: relative;
+    display: block;
+    float: left;
+    text-align: center;
+    padding-top: .3em;
+    
+}
+nav.navigation:after{
+    content: "";
+    clear: both;
+}
+nav.navigation ul{
+    position:relative;
+    display: block;
+    float: left;
+    
+}
+nav.navigation ul li{
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0px 1em;
+    z-index: 500;
+}
+.container{
+    position: relative;
+}
+.left{
+    position: absolute;
+    float: left;
+    left: 0em;
+    top: 5em;
+    width: 15em;
+}
+.main{
+    margin: auto;
+    margin-left: 15em;
+    margin-right: 15em;
+    padding: 5em;
+    
+}
+.about-myself:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+figure{
+    display: block;
+    float: left;
+    margin-left: 1em;
+}
+figure img{
+    max-width: 100%;
+    height: auto;
+}
+.about-myself{
+    width: 100%;
+    display: block;
+    float: left;
+    border-bottom: solid;    
+    border-width:thin;
+    border-color: grey;
+    
+}
+.about-myself p{
+    display: block;
+    float: left;
+    width: 20em;
+}
+.education{
+    width: 100%;
+    display: block;
+    float: left;
+}
+.education b{
+    display: block;
+    float: left;
+    width: 4em;
+}
+.education:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.education p{
+    display: block;
+    float: left;
+    width: 20em;
+}
+aside.right{
+    position: absolute;
+    right: 0em;
+    top: 5em;
+    width: 15em;
+    overflow: hidden;
+}
+.hobbies:after,.top-3-skills::after,.top5-movies::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.hobbies, .top-3-skills,.top5-movies{
+    background-color: #eee;
+    padding: .7em;
+    margin: 1em;
+}
+.hobbies h1,.top-3-skills h1,.top5-movies h1{
+    background-color:lightgreen ;
+    padding: 1em;
+}
+.hobbies ul,.top-3-skills ul,.top5-movies ul{
+    width: 100%;
+    display: block;
+    float: left;
+    font-size: 80%;
+    background-color: white;
+}
+.hobbies ul li,.top-3-skills ul li,.top5-movies ul li{
+    width: 100%;
+    display: block;
+    float: left;
+    padding-top: .7em;
+}
+.top-3-skills img{
+    display: block;
+    float: left;
+}
+.side-navigation:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.side-navigation{
+    background-color: #eee;
+    padding: .7em;
+    margin: 1em;
+}
+.side-navigation ul li{
+    width: 100%;
+    display: block;
+    float: left;
+    padding-top: .7em;
+}
+.research-interests:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.research-interests{
+    background-color: rgb(241, 231, 221);
+    color:rgb(99, 93, 87) ;
+    padding: .7em;
+    margin: 1em;
+}
+
+
