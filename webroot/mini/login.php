@@ -5,7 +5,7 @@
         <h1>my first </h1>
 
             <?php
-            echo $fsdf;
+            echo "hello";
             ?>
 
     </body>
