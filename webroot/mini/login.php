@@ -9,7 +9,7 @@
 	<body>
 <?php
 
-include 'includes\dbh.php';
+include 'dbh.php';
 
 $uname = $_POST["uname"];
 $password = $_POST["password"];
