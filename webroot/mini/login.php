@@ -14,7 +14,7 @@ $uname = $_POST["uname"];
 $password = $_POST["password"];
 
 $sql = "SELECT * FROM USERS WHERE email='$uname' AND password='$password'";
-$result = mysqli_query($conn,$sql);
+$result = $conn->query($sql);
 
 $firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$uname'");
 $lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$uname'");
