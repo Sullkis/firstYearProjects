@@ -41,6 +41,7 @@ button {
 .nav-links li {
   display: inline-block;
   margin: 0.65em;
+  vertical-align: middle;
 }
 .nav-links li:last-child {
   padding-right: 0;
