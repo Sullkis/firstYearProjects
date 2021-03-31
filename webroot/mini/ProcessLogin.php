@@ -5,6 +5,7 @@ include 'connection.php';
 if (isset($_POST['uname']) && isset($_POST['password'])){
 
     $uname = $_POST["uname"];
+	$uname = strtolower($uname);
     $password = $_POST["password"];
 
     if ($uname === '' && $password === '') {
