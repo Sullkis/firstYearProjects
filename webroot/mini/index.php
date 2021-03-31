@@ -34,7 +34,7 @@ session_start();
 
                     <?php
                     if (($_SESSION['login']) === true) {
-                        echo '<li class="welcome-user">welcome '. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
+                        echo '<li class="welcome-user">'. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
                         <a href="logout.php" id="logout-sub">click here to logout</a></li>';
                     }
                     else {
