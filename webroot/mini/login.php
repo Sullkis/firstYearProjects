@@ -13,9 +13,7 @@
                 <a href="index.php"><img class="logo" src="img/portfolioLogo.png" alt="logo"></a>
                 
             </div>
-            <div class="nav-content">
-                
-            </div>
+            
             <nav class="navigation">
                 <ul class="nav-links">
                     <li><a href="index.php">Suleiman Abuu</a></li>
@@ -35,10 +33,21 @@
                 
         </header>
         <div class="main-container">
-            <form class="login-form" action="login.php" method="POST">
+            <form class="login-form" action="ProcessLogin.php" method="POST">
                 <legend>Sign in</legend>
-                <input type="email" class="username" placeholder="Email" name="uname" required>
-                <input type="password" class="password" placeholder="Password" name="password" required>
+                
+                <?php
+                if (isset($_GET['error'])) { ?>
+                <p class="error">
+                    <br>
+                    <?php
+                     echo $_GET['error'];
+                     ?>
+                </p>
+                     <?php } ?>
+
+                <input type="email" class="username" placeholder="Email" name="uname">
+                <input type="password" class="password" placeholder="Password" name="password">
                 <input type="submit" value="Login">
 
             </form>
