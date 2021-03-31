@@ -6,9 +6,10 @@
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
     </head>
+	<body>
 <?php
 
-include 'dbh.php';
+include 'includes\dbh.php';
 
 $uname = $_POST["uname"];
 $password = $_POST["password"];
@@ -20,7 +21,7 @@ $firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$uname
 $lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$uname'");
 $id = mysqli_query($conn,"SELECT ID FROM USERS WHERE email='$uname'");
 
-if(mysqli_num_rows($result) == 1){
+if($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
         session_start();
         session_id($id);
@@ -35,6 +36,7 @@ else{
     $fail = "Login credentials invalid!";
     echo "<h3> $fail </h3><br>";
 }
-$conn = close();
+$conn->close();
 ?>
+	</body>
 </html>
