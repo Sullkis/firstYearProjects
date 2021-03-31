@@ -24,8 +24,6 @@
                     <li><a href="index.php#work">Work</a></li>
                     <li><a href="addPost.html">Blog</a></li>
 
-                    <a href="login.html" class="login">Login</a>
-
                 </ul>
 
             </nav>
