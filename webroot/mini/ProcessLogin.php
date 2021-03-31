@@ -22,11 +22,11 @@ else if ($password === '') {
     else{
 
         $sql = "SELECT * FROM USERS WHERE email='$uname' AND password='$password'";
-        $result = mysqli_querry($_conn,$sql);
+        $result = mysqli_query($_conn,$sql);
 
-        $firstName = mysqli_querry($_conn,"SELECT firstName FROM USERS WHERE email='$uname'");
-        $lastName = mysqli_querry($_conn,"SELECT lastName FROM USERS WHERE email='$uname'");
-        $id = mysqli_querry($_conn,"SELECT ID FROM USERS WHERE email='$uname'");
+        $firstName = mysqli_query($_conn,"SELECT firstName FROM USERS WHERE email='$uname'");
+        $lastName = mysqli_query($_conn,"SELECT lastName FROM USERS WHERE email='$uname'");
+        $id = mysqli_query($_conn,"SELECT ID FROM USERS WHERE email='$uname'");
 
         if(mysqli_num_rows($result) === 1){
             $row = mysqli_fetch_assoc($result);
@@ -37,14 +37,13 @@ else if ($password === '') {
                     $_SESSION['lastName'] = $row["lastName"];
                     $_SESSION['email'] = $uname;
                     $_SESSION['login'] = true;
-                    header('Location: addPost.html');
+                    header("Location: addPost.html");
                 }
         }
         else {
-            header('Location: login.php?error=Login credentials invalid');
+            header("Location: login.php?error=Login credentials invalid");
             exit();
         }
-
     }
 }
 else {
