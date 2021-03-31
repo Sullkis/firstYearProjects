@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
     </head>
-	<body>
 <?php
 
 include 'dbh.php';
@@ -21,16 +20,17 @@ $firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$uname
 $lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$uname'");
 $id = mysqli_query($conn,"SELECT ID FROM USERS WHERE email='$uname'");
 
-if($result->num_rows > 0){
-    while($row = $result->fetch_assoc()) {
+if(mysqli_num_rows($result) === 1){
+    $row = mysqli_fetch_assoc($result);
         session_start();
         session_id($id);
-        $_SESSION['firstName'] = $row["firstName"];
-        $_SESSION['lastName'] = $row["lastName"];
-        $_SESSION['email'] = $uname;
-        $_SESSION['login'] = true;
-      }
-      header('Location: addPost.html');
+        if($row['email'] === $uname && $row['password'] === $password){
+            $_SESSION['firstName'] = $row["firstName"];
+            $_SESSION['lastName'] = $row["lastName"];
+            $_SESSION['email'] = $uname;
+            $_SESSION['login'] = true;
+            header('Location: addPost.html');
+        }
 }
 else{
     $fail = "Login credentials invalid!";
@@ -38,5 +38,4 @@ else{
 }
 $conn->close();
 ?>
-	</body>
 </html>
