@@ -1,41 +1,41 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Suleiman's Portfolio - Sign In</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
+<head>
+        <link rel="stylesheet" href="reset.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css"> 
+       
     </head>
-<?php
+<?php    
+    
+    include 'connection.php';
+      
+    $loginEmail = $_POST["uname"];
+    $loginPassword = $_POST["password"];    
+        
+    $sql = "SELECT * FROM USERS WHERE email='$loginEmail' AND password='$loginPassword'";
+    $result = mysqli_query($conn,$sql);
+    
+    $firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$loginEmail'");
+    $lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$loginEmail'");
+    $id = mysqli_query($conn,"SELECT ID FROM USERS WHERE email='$loginEmail'");
+    
+    
 
-include 'dbh.php';
-
-$uname = $_POST["uname"];
-$password = $_POST["password"];
-
-$sql = "SELECT * FROM USERS WHERE email='$uname' AND password='$password'";
-$result = $conn->query($sql);
-
-$firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$uname'");
-$lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$uname'");
-$id = mysqli_query($conn,"SELECT ID FROM USERS WHERE email='$uname'");
-
-if(mysqli_num_rows($result) === 1){
-    $row = mysqli_fetch_assoc($result);
-        session_start();
-        session_id($id);
-        if($row['email'] === $uname && $row['password'] === $password){
-            $_SESSION['firstName'] = $row["firstName"];
-            $_SESSION['lastName'] = $row["lastName"];
-            $_SESSION['email'] = $uname;
-            $_SESSION['login'] = true;
-            header('Location: addPost.html');
-        }
-}
-else{
-    $fail = "Login credentials invalid!";
-    echo "<h3> $fail </h3><br>";
-}
-$conn->close();
+    if(mysqli_num_rows($result) == 1) {
+      while($row = mysqli_fetch_assoc($result)) {
+         session_start();       
+         session_id($id);      
+         $_SESSION['firstName']= $row["firstName"];
+         $_SESSION['lastName']=  $row["lastName"];
+         $_SESSION['email']= "$loginEmail";      
+         $_SESSION['login']=true;     
+      }      
+      header('Location: addPost.html');         
+     }
+     else {       
+        $error = "Login failed! Invalid email or password";
+        echo  "<h3>$error</h3><br>";     
+        echo "<button class=\"submit\" id=\"loginLink\"><a href=\"login.html\">Try Again</a></button>";        
+     }
+     $conn->close(); 
 ?>
 </html>
