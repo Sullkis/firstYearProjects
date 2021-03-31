@@ -1,5 +1,6 @@
 <?php
-
+// suleiman.abuu28@gmail.com password123
+//user.1@mail.com pass1
 session_start();
 
 ?>
@@ -28,18 +29,20 @@ session_start();
                     <li><a href="index.php#skill">Skill</a></li>
                     <li><a href="index.php#education">Education</a></li>
                     <li><a href="index.php#work">Work</a></li>
-                    <li><a href="addPost.html">Blog</a></li>
+                    <li><a href="addPost.php">Blog</a></li>
 
                     <?php
                     if (($_SESSION['login']) === true) {
-                        echo '<a href="logout.php" class="login">logout</a>';
+                        echo '<li class="welcome-user">welcome '. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
+                        <a href="logout.php" id="logout-sub">click here to logout</a></li>';
                     }
                     else {
                         echo '<a href="login.php" class="login">Login</a>';
                     }
                     ?>
+                    
                 </ul>
-            </nav>
+            </nav> 
         </header>
         <div class="main-container">
             <form class="add-post-form" action="index.php" action="POST">
