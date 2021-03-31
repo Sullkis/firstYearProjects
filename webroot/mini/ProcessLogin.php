@@ -22,11 +22,11 @@ else if ($password === '') {
     else{
 
         $sql = "SELECT * FROM USERS WHERE email='$uname' AND password='$password'";
-        $result = mysqli_query($_conn,$sql);
+        $result = mysqli_query($conn,$sql);
 
-        $firstName = mysqli_query($_conn,"SELECT firstName FROM USERS WHERE email='$uname'");
-        $lastName = mysqli_query($_conn,"SELECT lastName FROM USERS WHERE email='$uname'");
-        $id = mysqli_query($_conn,"SELECT ID FROM USERS WHERE email='$uname'");
+        $firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$uname'");
+        $lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$uname'");
+        $id = mysqli_query($conn,"SELECT ID FROM USERS WHERE email='$uname'");
 
         if(mysqli_num_rows($result) === 1){
             $row = mysqli_fetch_assoc($result);
