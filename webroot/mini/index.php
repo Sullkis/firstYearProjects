@@ -33,13 +33,13 @@ session_start();
                     <li><a href="addPost.php">Blog</a></li>
 
                     <?php
-                    //if (($_SESSION['login']) === true) {
+                    if (($_SESSION['login']) === true) {
                         echo '<li class="welcome-user">welcome '. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
                         <a href="logout.php" id="logout-sub">click here to logout</a></li>';
-                    //}
-                    //else {
+                    }
+                    else {
                         echo '<a href="login.php" class="login">Login</a>';
-                    //}
+                    }
                     ?>
 
                 </ul>
