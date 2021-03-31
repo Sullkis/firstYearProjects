@@ -15,6 +15,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])){
         header("Location: login.php?error=Email is required");
         exit();
 }
+	
 else if ($password === '') {
     header("Location: login.php?error=Password is required");
     exit();
