@@ -35,6 +35,6 @@ else{
     $fail = "Login credentials invalid!";
     echo "<h3> $fail </h3><br>";
 }
-close($conn);
+$conn = close();
 ?>
 </html>
