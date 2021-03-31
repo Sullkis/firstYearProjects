@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 ?>
@@ -31,8 +32,15 @@ session_start();
                     <li><a href="index.php#work">Work</a></li>
                     <li><a href="addPost.html">Blog</a></li>
 
-                    <a href="login.html" class="login">Login</a>
-                    
+                    <?php
+                    if (($_SESSION['login']) === true) {
+                        echo '<a href="logout.php" class="login">logout</a>';
+                    }
+                    else {
+                        echo '<a href="login.html" class="login">Login</a>';
+                    }
+                    ?>
+
                 </ul>
 
             </nav>
