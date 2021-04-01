@@ -10,7 +10,7 @@ $postCont = $_POST["post-cont"];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO BLOGPOSTS(datePosted, postTitle,postCont) 
-    VALUES ($postedTime, $title, $postCont)";
+    VALUES ('$postedTime', '$title', '$postCont')";
 
     if ($conn->query($sql) === TRUE) {
 
