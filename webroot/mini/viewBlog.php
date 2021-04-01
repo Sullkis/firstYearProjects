@@ -77,8 +77,8 @@ include 'sortBlogEntries.php';
 
                 for ($i=0; $i < count($sorted); $i++) {
                     $toPrintTime = $sorted[$i]['datePosted']; 
-                    $toPrintTitle = $sorted[$i]['title'];
-                    $toPrintPost = $sorted[$i]['post'];
+                    $toPrintTitle = $sorted[$i]['postTitle'];
+                    $toPrintPost = $sorted[$i]['postCont'];
                 
                     echo '<div class="userPosts">
                     <p class="timeforblog"><img class="clock" src="img/—Pngtree—vector clock icon_3785539.png" alt="logo">'
