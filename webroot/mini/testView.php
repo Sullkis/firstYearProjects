@@ -69,9 +69,7 @@ include 'connection.php';
                         }
                     }
 
-                    foreach ($blogDatas[0] as $data) {
-                        echo $data;
-                    }
+                    print_r($blogDatas);
                     /*
                     if ($result->num_rows > 0) {
                         // output data of each row
