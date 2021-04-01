@@ -7,13 +7,14 @@ session_start();
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewpoint" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, minimum-scale=1">
         <title>Suleiman's Portfolio</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
+        
         <header class="top-bar">
             <div class="title">
                 <a href="index.php"><img class="logo" src="img/portfolioLogo.png" alt="logo"></a>
@@ -34,7 +35,7 @@ session_start();
 
                     <?php
                     if (($_SESSION['login']) === true) {
-                        echo '<li class="welcome-user">'. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
+                        echo '<li class="welcome-user">Welcome'. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
                         <a href="logout.php" id="logout-sub">click here to logout</a></li>';
                     }
                     else {
@@ -43,9 +44,15 @@ session_start();
                     ?>
 
                 </ul>
-
-            </nav>
                 
+            </nav>
+            <button class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+
         </header>
         <article class="main-container">
 
