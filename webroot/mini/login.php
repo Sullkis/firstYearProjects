@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta charset="utf-8">
-        <title>Suleiman's Portfolio - Sign In</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1">
+        <title>Suleiman's Portfolio</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="img/portfolioLogo.png">
+
     </head>
     <body>
         <header class="top-bar">
@@ -22,12 +23,10 @@
                     <li><a href="index.php#skill">Skill</a></li>
                     <li><a href="index.php#education">Education</a></li>
                     <li><a href="index.php#work">Work</a></li>
-                    <li><a href="addPost.html">Blog</a></li>
+                    <li><a href="addpost.php">Blog</a></li>
 
                 </ul>
-
             </nav>
-            
                 
         </header>
         <div class="main-container">
@@ -49,7 +48,6 @@
                 <input type="submit" value="Login">
 
             </form>
-            
             </div>
         </div>
     </body>
