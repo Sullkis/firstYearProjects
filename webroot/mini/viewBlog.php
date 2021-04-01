@@ -73,6 +73,7 @@ include 'sortBlogEntries.php';
                         $blogDatas[] = $row;
                     }
                 }
+				print_r($blogDatas);
                 $sorted = sortarray($blogDatas,'datePosted');
 
                 for ($i=0; $i < count($sorted); $i++) {
