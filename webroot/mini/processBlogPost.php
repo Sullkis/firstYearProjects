@@ -5,8 +5,8 @@ include 'connection.php';
 date_default_timezone_set('UTC');
 $postedTime = date("jS F Y, H:i")." UTC";
 
-$title = $_POST["title"];
-$postCont = $_POST["post-cont"];
+$title =addslashes($_POST["title"]);
+$postCont =addslashes($_POST["post-cont"]);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO BLOGPOSTS(datePosted, postTitle,postCont) 
@@ -22,5 +22,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     $conn->close();
 };
-
 ?>
