@@ -60,12 +60,19 @@ include 'connection.php';
             <div class="viewBlog">
                 <?php
                     $sql = "SELECT * FROM BLOGPOSTS";
-					
-					echo '$sql';
-				
-				
-                    /*$result = $conn->query($sql);
-                    
+                    $result = $conn->query($sql);
+                    $blogDatas = array();
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()){
+                            $blogDatas = $row;
+                        }
+                    }
+
+                    foreach ($blogDatas[0] as $data) {
+                        echo $data;
+                    }
+                    /*
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while($row = $result->fetch_assoc()) {
