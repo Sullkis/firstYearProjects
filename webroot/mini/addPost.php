@@ -1,59 +1,45 @@
 <?php
-// suleiman.abuu28@gmail.com password123
-//user.1@mail.com pass1
-session_start();
 
+include 'connection.php';
+
+$uname = $_POST["uname"];
+$password = $_POST["password"];
+
+if ($uname === '' && $password === '') {
+    header("Location: login.php?error=Please fill in credentials");
+    exit();
+}
+else if ($uname === '') {
+    header("Location: login.php?error=Email is required");
+    exit();
+}
+else if ($password === '') {
+    header("Location: login.php?error=Password is required");
+    exit();
+}
+else{
+    $sql = "SELECT * FROM USERS WHERE email='$uname' AND password='$password'";
+    $result = mysqli_query($conn,$sql);
+
+    $firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$uname'");
+    $lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$uname'");
+    $id = mysqli_query($conn,"SELECT ID FROM USERS WHERE email='$uname'");
+
+    if(mysqli_num_rows($result) === 1){
+        $row = mysqli_fetch_assoc($result);
+            session_start();
+            session_id($id);
+            if($row['email'] === $uname && $row['password'] === $password){
+                $_SESSION['firstName'] = $row["firstName"];
+                $_SESSION['lastName'] = $row["lastName"];
+                $_SESSION['email'] = $uname;
+                $_SESSION['login'] = true;
+                header("Location: addPost.html");
+            }
+        }
+        else {
+            header("Location: login.php?error=Login credentials invalid");
+            exit();
+        }
+    }
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Suleiman's Portfolio - Add to Blog</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-    <header class="top-bar">
-            <div class="title">
-                <a href="index.php"><img class="logo" src="img/portfolioLogo.png" alt="logo"></a>
-                
-            </div>
-            <div class="nav-content">
-                
-            </div>
-            <nav class="navigation">
-                <ul class="nav-links">
-                    <li><a href="index.php">Suleiman Abuu</a></li>
-                    <li><a href="index.php#about">About</a></li>
-                    <li><a href="index.php#experience">Experience</a></li>
-                    <li><a href="index.php#skill">Skill</a></li>
-                    <li><a href="index.php#education">Education</a></li>
-                    <li><a href="index.php#work">Work</a></li>
-                    <li><a href="addPost.php">Blog</a></li>
-
-                    <?php
-                    if (($_SESSION['login']) === true) {
-                        echo '<li class="welcome-user">welcome '. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
-                        <a href="logout.php" id="logout-sub">click here to logout</a></li>';
-                    }
-                    else {
-                        echo '<a href="login.php" class="login">Login</a>';
-                    }
-                    ?>
-                    
-                </ul>
-            </nav> 
-        </header>
-        <div class="main-container">
-            <form class="add-post-form" action="index.php" action="POST">
-                <legend>Add Blog</legend>
-                <input type="text" class="blog-title" placeholder="Title" onfocus="">
-                <textarea class="blog-post" placeholder="Enter your text here" ></textarea>
-                <input type="submit" value="Post" onclick="submitForm()">
-                <input type="reset" class="beeep" value="Clear" onclick="return clearText()" ></input>
-
-            </form>
-        </div>
-        <script src="main.js"></script>
-    </body>
-</html>
