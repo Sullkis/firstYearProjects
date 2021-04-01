@@ -3,6 +3,7 @@
 session_start();
 
 include 'connection.php';
+include 'dayandnight.php';
 
 ?>
 <!DOCTYPE html>
@@ -69,7 +70,7 @@ include 'connection.php';
                         }
                     }
 
-                    print_r($blogDatas);
+                    $sortedArray = sortarray($blogDatas,'datePosted');
                     /*
                     if ($result->num_rows > 0) {
                         // output data of each row
