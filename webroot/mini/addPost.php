@@ -55,14 +55,23 @@ session_start();
 
         </header>
         <div class="main-container">
-            <form class="add-post-form" action="processBlogPost.php" method="POST">
+            <?php
+            if ($_SESSION['login'] === true) {
+                echo '<form class="add-post-form" action="processBlogPost.php" method="POST">
                 <legend>Add Blog</legend>
                 <input type="text" class="blog-title" placeholder="Title" name="title" onfocus="">
                 <textarea class="blog-post" placeholder="Enter your text here" name="post-cont"></textarea>
                 <input type="submit" value="Post" onclick="submitForm()">
                 <input type="reset" class="beeep" value="Clear" onclick="return clearText()" ></input>
 
-            </form>
+            </form>';
+            }
+            else {
+                echo 'To Post on the blog please log in';
+                echo '<a href="login.php" class="login">Login</a>';
+            }
+            ?>
+            
         </div>
         <script src="main.js"></script>
     </body>
