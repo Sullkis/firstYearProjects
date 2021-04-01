@@ -60,6 +60,10 @@ include 'connection.php';
             <div class="viewBlog">
                 <?php
                     $sql = "SELECT * FROM BLOGPOSTS";
+					
+					echo "$sql";
+				
+				
                     /*$result = $conn->query($sql);
                     
                     if ($result->num_rows > 0) {
