@@ -22,9 +22,9 @@ function sortarray($array,$datekey){
     print_r ($sorted);
 
     foreach ($sorted as &$value) {
-    for ($i=0; $i < count($items); $i++) { 
-        if ($value[$datekey] === strtotime($items[$i][$datekey])) {
-            $value[$datekey] = $items[$i][$datekey];
+    for ($i=0; $i < count($array); $i++) { 
+        if ($value[$datekey] === strtotime($array[$i][$datekey])) {
+            $value[$datekey] = $array[$i][$datekey];
         }
     }
 }
