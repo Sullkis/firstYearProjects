@@ -61,7 +61,7 @@ include 'connection.php';
                 <?php
                     $sql = "SELECT * FROM BLOGPOSTS";
 					
-					echo "$sql";
+					echo '$sql';
 				
 				
                     /*$result = $conn->query($sql);
