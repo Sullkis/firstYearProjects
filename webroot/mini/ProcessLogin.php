@@ -34,7 +34,7 @@ else{
                 $_SESSION['lastName'] = $row["lastName"];
                 $_SESSION['email'] = $uname;
                 $_SESSION['login'] = true;
-                header("Location: addPost.html");
+                header("Location: addPost.php");
             }
         }
         else {
