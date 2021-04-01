@@ -3,6 +3,7 @@
 session_start();
 
 include 'connection.php';
+include 'sortBlogEntries.php';
 
 ?>
 <!DOCTYPE html>
@@ -58,20 +59,41 @@ include 'connection.php';
         </header>
         <div class="main-container">
             <div class="viewBlog">
-                <?php
-                    $sql = "SELECT * FROM BLOGPOSTS";
-                    $result = $conn->query($sql);
-                    
-                    if ($result->num_rows > 0) {
-                        // output data of each row
-                        while($row = $result->fetch_assoc()) {
-                            echo "<br> ID: ". $row["ID"]. " - TITLE: ". $row["postTitle"]. " POST: " . $row["postCont"] . " date: " . $row["datePosted"] . "<br>";
-                        }
-                    } else {
-                        echo "0 results";
+            <?php
+                if (($_SESSION['login']) === true) {
+                    echo '<a href="addPost.php" class="addPostBtn">Add to Post</a>';
+                }
+            ?>
+            <?php
+                $sqi = "SELECT * FROM BLOGPOSTS";
+                $result = mysqli_query($conn,$sqi);
+
+                if (mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)){
+                        $blogDatas[] = $row;
                     }
-                    
-                ?>
+                }
+                $sorted = sortarray($blogDatas,'datePosted');
+
+                for ($i=0; $i < count($sorted); $i++) {
+                    $toPrintTime = $sorted[$i]['datePosted']; 
+                    $toPrintTitle = $sorted[$i]['title'];
+                    $toPrintPost = $sorted[$i]['post'];
+                
+                    echo '<div class="userPosts">
+                    <p class="timeforblog"><img class="clock" src="img/—Pngtree—vector clock icon_3785539.png" alt="logo">'
+                    ."$toPrintTime</p>"
+                    .'<br>'
+                    .'<h3 class="userPosttitles">'
+                    ."$toPrintTitle</h3>"
+                    .'<br><p class="userPostCont">'
+                    ."$toPrintPost"
+                    .'</p>
+                
+                    </div>
+                    <hr>';
+                }
+            ?>
             </div>
         </div>
         <script src="main.js"></script>
