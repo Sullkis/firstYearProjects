@@ -22,7 +22,7 @@ function sortarray($array,$datekey){
 
 
     foreach ($sorted as &$value) {
-		$value[$datekey] = date("jS F Y, H:i:s",$value[$datekey])." UTC";
+		$value[$datekey] = date("jS F Y, H:i",$value[$datekey])." UTC";
 }
 return $sorted;
 }
