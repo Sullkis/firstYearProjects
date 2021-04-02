@@ -67,8 +67,10 @@ session_start();
             </form>';
             }
             else {
+				<div class = "add-post-form">
                 echo 'To Post on the blog please log in';
                 echo '<a href="login.php" class="login">Login</a>';
+				</div>
             }
             ?>
             
