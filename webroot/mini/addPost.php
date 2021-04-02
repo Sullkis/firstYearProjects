@@ -62,13 +62,13 @@ session_start();
                 <input type="text" class="blog-title" placeholder="Title" name="title" onfocus="">
                 <textarea class="blog-post" placeholder="Enter your text here" name="post-cont"></textarea>
                 <input type="submit" value="Post" onclick="submitForm()">
-                <input type="reset" class="beeep" value="Clear" onclick="return clearText()" ></input>
+               <input type="reset" class="beeep" value="Clear" onclick="return clearText()" ></input>
 
             </form>';
             }
             else {
-                echo 'To Post on the blog please log in';
-                echo '<a href="login.php" class="login">Login</a>';
+                echo '<div class="addPostNLI"><p>To Post on the blog please log in</p><br>';
+                echo '<a href="login.php" class="login">Login</a></div>';
             }
             ?>
             
