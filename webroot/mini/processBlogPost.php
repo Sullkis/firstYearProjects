@@ -3,7 +3,7 @@
 include 'connection.php';
 
 date_default_timezone_set('UTC');
-$postedTime = date("jS F Y, H:i")." UTC";
+$postedTime = date("jS F Y, H:i:s")." UTC";
 
 $title =addslashes($_POST["title"]);
 $postCont =addslashes($_POST["post-cont"]);
