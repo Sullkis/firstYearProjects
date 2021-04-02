@@ -73,14 +73,12 @@ include 'sortBlogEntries.php';
                         $blogDatas[] = $row;
                     }
                 }
-				if(!empty($blogDatas)){
-					$sorted = sortarray($blogDatas,'datePosted');
-					
-					for ($i=0; $i < count($sorted); $i++) {
+				for ($i=0; $i < count($sorted); $i++) {
                     $toPrintTime = $sorted[$i]['datePosted']; 
                     $toPrintTitle = $sorted[$i]['postTitle'];
                     $toPrintPost = $sorted[$i]['postCont'];
-						echo '<div class="userPosts">
+                
+                    echo '<div class="userPosts">
                     <p class="timeforblog"><img class="clock" src="img/—Pngtree—vector clock icon_3785539.png" alt="logo">'
                     ."$toPrintTime</p>"
                     .'<br>'
@@ -88,21 +86,11 @@ include 'sortBlogEntries.php';
                     ."$toPrintTitle</h3>"
                     .'<br><p class="userPostCont">'
                     ."$toPrintPost"
-                    .'</p> 
-					</div>
+                    .'</p>
+                
+                    </div>
                     <hr>';
-                	}
-				}
-				else{
-					echo '<div class="userPosts">
-                    <p class="timeforblog"> '
-                    ."</p>"
-                    .'<br>'
-                    .'<h3 class="userPosttitles">'
-                    ."</h3>"
-                    .'<br><p class="userPostCont">'
-                    .' </p></div>';
-				}   
+                }
             ?>
             </div>
         </div>
