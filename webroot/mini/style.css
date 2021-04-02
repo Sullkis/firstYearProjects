@@ -423,21 +423,7 @@ td {
 
 /*POST STUFF*/
 
-.addPostNLI{
-  margin: auto;
-  width: 450px;
-  padding: 2em;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  position: absolute;
-  background-color: #edf0f1;
-  color: #000;
-  text-align: center;
-  border-radius: 24px;
-}
-
-.add-post-form {
+.addPostNLI,.add-post-form {
   margin: auto;
   width: 450px;
   padding: 2em;
