@@ -22,7 +22,9 @@ function sortarray($array,$datekey){
 
     foreach ($sorted as &$value) {
     for ($i=0; $i < count($array); $i++) { 
-        $value[$datekey] = date("jS F Y, H:i", $array[$i][$datekey])." UTC";
+        if ($value[$datekey] === strtotime($array[$i][$datekey])) {
+            $value[$datekey] = $array[$i][$datekey];
+        }
     }
 }
 return $sorted;
