@@ -17,15 +17,12 @@ function sortarray($array,$datekey){
         }
         return $c;
     };
+	$postedTime = date("jS F Y, H:i:s")." UTC";
     $sorted = sort_arr($newArray,$datekey);
 
 
     foreach ($sorted as &$value) {
-    for ($i=0; $i < count($array); $i++) { 
-        if ($value[$datekey] === strtotime($array[$i][$datekey])) {
-            $value[$datekey] = $array[$i][$datekey];
-        }
-    }
+		$value[$datekey] = date("jS F Y, H:i:s",$value[$datekey])." UTC";
 }
 return $sorted;
 }
