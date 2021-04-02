@@ -101,18 +101,8 @@ include 'sortBlogEntries.php';
                     .'<h3 class="userPosttitles">'
                     ."</h3>"
                     .'<br><p class="userPostCont">'
-                    .
-                    .' </p> 
-					</div>
-                    ';
-				}
-                
-
-                
-                
-                    
-                
-                   
+                    .' </p></div>';
+				}   
             ?>
             </div>
         </div>
