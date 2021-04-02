@@ -7,22 +7,22 @@ function sortarray($array,$datekey){
     }
     function sort_arr($array,$key){
         foreach ($array as $k => $v) {
-            $b[] = strtolower($v[$key]);
+            $arrP1[] = strtolower($v[$key]);
         }
     
-        arsort($b);
+        arsort($arrP1);
     
-        foreach ($b as $k => $v) {
-            $c[] = $array[$k];
+        foreach ($arrP1 as $k => $v) {
+            $arrP2[] = $array[$k];
         }
-        return $c;
+        return $arrP2;
     };
     $sorted = sort_arr($newArray,$datekey);
 
 
     foreach ($sorted as &$value) {
     for ($i=0; $i < count($array); $i++) { 
-        $value[$datekey] = date("Y-m-d", $value[$datekey]);
+        $value[$datekey] = date("jS F Y, H:i", $value[$datekey])." UTC";
     }
 }
 return $sorted;
