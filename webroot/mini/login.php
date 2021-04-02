@@ -14,19 +14,6 @@
                 <a href="index.php"><img class="logo" src="img/portfolioLogo.png" alt="logo"></a>
                 
             </div>
-            
-            <nav class="navigation">
-                <ul class="nav-links">
-                    <li><a href="index.php">Suleiman Abuu</a></li>
-                    <li><a href="index.php#about">About</a></li>
-                    <li><a href="index.php#experience">Experience</a></li>
-                    <li><a href="index.php#skill">Skill</a></li>
-                    <li><a href="index.php#education">Education</a></li>
-                    <li><a href="index.php#work">Work</a></li>
-                    <li><a href="addpost.php">Blog</a></li>
-
-                </ul>
-            </nav>
                 
         </header>
         <div class="main-container">
