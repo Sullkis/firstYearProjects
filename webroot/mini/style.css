@@ -427,7 +427,7 @@ td {
   margin: auto;
   width: 450px;
   padding: 2em;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
@@ -479,9 +479,9 @@ td {
   margin: auto;
   width: 360px;
   padding: 2em;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   position: absolute;
   background-color: #edf0f1;
   color: #000;
@@ -567,4 +567,17 @@ footer sub {
 }
 hr{
   border:.1em solid #293241;
+}
+.addPostNLI{
+  margin: auto;
+  width: 450px;
+  padding: 2em;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  background-color: #edf0f1;
+  color: #000;
+  text-align: center;
+  border-radius: 24px;
 }
