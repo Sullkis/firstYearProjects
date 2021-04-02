@@ -73,6 +73,9 @@ include 'sortBlogEntries.php';
                         $blogDatas[] = $row;
                     }
                 }
+				
+				$sorted = sortarray($blogDatas,'datePosted');
+				
 				for ($i=0; $i < count($sorted); $i++) {
                     $toPrintTime = $sorted[$i]['datePosted']; 
                     $toPrintTitle = $sorted[$i]['postTitle'];
