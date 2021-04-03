@@ -34,7 +34,7 @@ include 'sortBlogEntries.php';
                     <li><a href="index.php#skill">Skill</a></li>
                     <li><a href="index.php#education">Education</a></li>
                     <li><a href="index.php#work">Work</a></li>
-                    <li><a href="addPost.php">Blog</a></li>
+                    <li><a href="viewBlog.php">Blog</a></li>
 
                     <?php
                     if (($_SESSION['login']) === true) {
