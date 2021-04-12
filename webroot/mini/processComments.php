@@ -11,7 +11,7 @@ $ComMes =addslashes($_POST["com-cont"]);
 $userId = session_id();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $sql = "INSERT INTO comments(USER_ID, POST_ID, message,datePosted) 
+    $sql = "INSERT INTO COMMENTS(USER_ID, POST_ID, message,datePosted) 
     VALUES ('$userId','$blogPostID','$ComMes','$postedTime')";
 
     if ($conn->query($sql) === TRUE) {
