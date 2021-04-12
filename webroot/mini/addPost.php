@@ -2,6 +2,8 @@
 
 session_start();
 
+require 'functions.php'
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +36,7 @@ session_start();
                     <li><a href="viewBlog.php">Blog</a></li>
 
                     <?php
-                    if (($_SESSION['login']) === true) {
+                    if ((isset($_SESSION['login']) && $_SESSION['login'] === true)) {
                         echo '<li class="welcome-user">'. $_SESSION['firstName'] . ' ' .  $_SESSION['lastName'] . '<br>
                         <a href="logout.php" id="logout-sub">click here to logout</a></li>';
                     }
@@ -56,7 +58,7 @@ session_start();
         </header>
         <div class="main-container">
             <?php
-            if ($_SESSION['login'] === true) {
+            if ((isset($_SESSION['login']) && $_SESSION['login'] === true && checkIfAdmin($_SESSION['email'])===true )) {
                 echo '<form class="add-post-form" action="processBlogPost.php" method="POST">
                 <legend>Add Blog</legend>
                 <input type="text" class="blog-title" placeholder="Title" name="title" onfocus="">
@@ -67,8 +69,15 @@ session_start();
             </form>';
             }
             else {
-                echo '<div class="addPostNLI"><p>To Post on the blog please log in</p><br>';
-                echo '<a href="login.php" class="login">Login</a></div>';
+                if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+                    echo '<div class="addPostNLI"><p>You do not have authorisation to post on the blog</p><br>';
+                    echo '<a href="viewBlog.php" class="login">Click Here to View the blog entries</a></div>';
+                }
+                else {
+                    echo '<div class="addPostNLI"><p>To Post on the blog please log in</p><br>';
+                    echo '<a href="login.php" class="login">Login</a></div>';
+                }
+                
             }
             ?>
             

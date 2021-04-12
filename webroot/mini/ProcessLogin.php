@@ -1,6 +1,7 @@
 <?php
 
 include 'connection.php';
+require 'functions.php';
 
 $uname = $_POST["uname"];
 $password = $_POST["password"];
@@ -21,21 +22,23 @@ else{
     $sql = "SELECT * FROM USERS WHERE email='$uname' AND password='$password'";
     $result = mysqli_query($conn,$sql);
 
-    $firstName = mysqli_query($conn,"SELECT firstName FROM USERS WHERE email='$uname'");
-    $lastName = mysqli_query($conn,"SELECT lastName FROM USERS WHERE email='$uname'");
-    $id = mysqli_query($conn,"SELECT ID FROM USERS WHERE email='$uname'");
-
     if(mysqli_num_rows($result) === 1){
         $row = mysqli_fetch_assoc($result);
+            session_id($row['ID']);
             session_start();
-            session_id($id);
-            if($row['email'] === $uname && $row['password'] === $password){
-                $_SESSION['firstName'] = $row["firstName"];
-                $_SESSION['lastName'] = $row["lastName"];
-                $_SESSION['email'] = $uname;
-                $_SESSION['login'] = true;
+            
+            $_SESSION['firstName'] = $row["firstName"];
+            $_SESSION['lastName'] = $row["lastName"];
+            $_SESSION['email'] = $uname;
+            $_SESSION['login'] = true;
+            if (isset($_SESSION['login']) && $_SESSION['login'] === true && checkIfAdmin($_SESSION['email']) === true) {
                 header("Location: addPost.php");
             }
+            else {
+                header("Location: viewBlog.php");
+            }
+            
+            
         }
         else {
             header("Location: login.php?error=Login credentials invalid");

@@ -56,17 +56,14 @@ session_start();
         </header>
         <article class="main-container">
 
-            <section class="home">
-                <div class="home-content">  
-                    <h1 class="home-title">
-                        HELLO,
-                        <br><span>I'M SULEIMAN</span>
-                    </h1>
-                    <p>Computer Science Student</p>
-                    <div class="home-buttons">
-                        <a href="contact.php"><button class="blop">Get In Touch</button></a>
-                        <a href="portfolio.php#work"><button class="blop">My Work</button></a>
-                    </div>
+            <section class="contact">
+                <form action="mailto:Suleiman.abuu28@gmail.com" method="POST" class="contact-form" enctype="text/plain">
+                        <legend>Contact Me</legend>
+                        <input type="text" name="contactName" class="cont-name" placeholder="Enter Your Name">
+                        <input type="email" name="contactEmail" class="cont-Email" placeholder="Enter Your Email">
+                        <textarea name="contactMessage" class="cont-message" cols="18" rows="6" placeholder="Enter Your Message"></textarea>
+                        <input type="submit" value="Sumbit">
+                    </form>
                 </div>
             </section>
 

@@ -1,0 +1,100 @@
+suleiman.abuu28@gmail.com password123
+user.1@mail.com pass1
+
+
+
+Array ( 
+    [0] => Array ( 
+
+        [ID] => 1 
+        [datePosted] => 1st April 2021, 15:22 UTC 
+        [postTitle] => hello 
+        [postCont] => from the other side ) 
+
+    [1] => Array ( 
+
+        [ID] => 2 
+        [datePosted] => 1st April 2021, 15:28 UTC 
+        [postTitle] => tupac 
+        [postCont] => is the greatest ) 
+            
+    [2] => Array ( 
+
+        [ID] => 3 
+        [datePosted] => 1st April 2021, 15:28 UTC 
+        [postTitle] => scoop 
+        [postCont] => dee doop ) 
+        
+        ) 
+
+        sort out the time stuff when it is put up at same minute
+        change max length of text
+        clean things up a little
+        add extra features
+
+
+            function sort_arr($array,$dkey){
+        for ($i = 0; $i < ( count($array) - 1 ); $i++) {
+            for ($j = 0; $j < count($array) - $i - 1; $j++) {
+              if ($array[$j][$dkey] < $array[$j+1][$dkey]) 
+              {
+                 $temp = $array[$j];
+                 $array[$j] = $array[$j+1];
+                 $array[$j+1] = $temp;
+              }
+            }
+          }
+          return $array;
+    };
+
+
+    <section class="contact" id="contact">
+                <div class="contact-cont">
+                    <form action="mailto:Suleiman.abuu28@gmail.com" method="POST" class="contact-form" enctype="text/plain">
+                        <legend>Contact Me</legend>
+                        <input type="text" name="contactName" class="cont-name" placeholder="Enter Your Name">
+                        <input type="email" name="contactEmail" class="cont-Email" placeholder="Enter Your Email">
+                        <textarea name="contactMessage" class="cont-message" cols="18" rows="6" placeholder="Enter Your Message"></textarea>
+                        <input type="submit" value="Sumbit">
+                    </form>
+                </div>
+            </section>
+
+
+<section class="work" id="work">
+    <div class="work-cont">
+        <p class="sec-title">Work</p>
+        <ul>
+            <li class="proj1">
+                <a href="http://cakephp-mysql-persistent-ftwproject.apps.okd.eecs.qmul.ac.uk/topic2/my_homepage_week3.html">
+                    <img src="img/Screenshot_2021-03-21 Welcome to My Homepage - Suleiman Abuu.png" alt="">
+                </a>
+                            
+            </li>
+            <li class="proj2">
+                <a href="http://cakephp-mysql-persistent-ftwproject.apps.okd.eecs.qmul.ac.uk/topic4/favouriteMovies.html">
+                    <img src="img/Screenshot_2021-03-21 favourite movies.png" alt="">
+                </a>
+                            
+            </li>
+            <li class="proj3">
+                <a href="http://cakephp-mysql-persistent-ftwproject.apps.okd.eecs.qmul.ac.uk/topic4/shirt-ordering-form.html">
+                    <img src="img/Screenshot_2021-03-21 T-shirt Ordering Form.png" alt="">
+                </a>
+                            
+            </li>
+            <li class="proj4">
+                <a href="http://cakephp-mysql-persistent-ftwproject.apps.okd.eecs.qmul.ac.uk/Topic5/exercise2.html">
+                    <img src="img/Screenshot_2021-03-21 Week 5 - homepage.png" alt="">
+                </a>
+                            
+            </li>
+            <li class="proj5">
+                <a href="http://cakephp-mysql-persistent-ftwproject.apps.okd.eecs.qmul.ac.uk/Topic5/exercise3.html">
+                    <img src="img/Screenshot_2021-03-21 Week 5 - homepage(1).png" alt="">
+                </a>
+                            
+            </li>
+        </ul>
+    </div>
+</section>
