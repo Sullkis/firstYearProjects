@@ -67,7 +67,7 @@ return $sortedArray;
 
 function checkIfAdmin($sessionEmail){
 
-    $adminEmails = array("admin@mail.com");
+    $adminEmails = array("suleiman@mail.com");
 
     for ($i=0; $i < count($adminEmails); $i++) { 
 
